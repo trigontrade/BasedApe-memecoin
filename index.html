@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" ref="/css/popcatr.ico" type="image/x-icon" />
     <title>PopCatRock &#8211; On Bitrock</title>
+    <style>/* Popup Button Styles */
+#popup-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Popup Iframe Container Styles */
+#popup-container {
+  display: none;
+  position: fixed;
+  bottom: 60px; /* Adjust based on the height of your popup button */
+  left: 20px;
+  width: 80%;
+  max-width: 400px; /* Set the desired width */
+  height: 60%;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Iframe Styles */
+#popup-iframe {
+  width: 100%;
+  height: calc(100% - 40px); /* Adjust based on the height of your close button */
+  border: none;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Close Button Styles */
+#close-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+    </style>
   </head>
   <body>
     <header>
@@ -213,6 +265,24 @@
         </li>
       </ul>
     </footer>
+    <!-- Popup Button -->
+<div id="popup-button" onclick="togglePopup()">Popup</div>
+
+<!-- Popup Iframe Container -->
+<div id="popup-container">
+  <iframe id="popup-iframe" src="https://example.com" title="Popup Iframe"></iframe>
+  <button id="close-button" onclick="togglePopup()">Close</button>
+</div>
+    <script>
+  function togglePopup() {
+    var popupContainer = document.getElementById('popup-container');
+    if (popupContainer.style.display === 'none' || popupContainer.style.display === '') {
+      popupContainer.style.display = 'block';
+    } else {
+      popupContainer.style.display = 'none';
+    }
+  }
+</script>
   </body>
   <script src="script.js"></script>
 </html>
