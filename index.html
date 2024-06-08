@@ -8,6 +8,7 @@
     <link rel="icon" ref="/css/popcatr.ico" type="image/x-icon" />
     <title>PopCatRock &#8211; On Bitrock</title>
     <style>/* Popup Button Styles */
+/* Popup Button Styles */
 #popup-button {
   position: fixed;
   bottom: 20px;
@@ -21,7 +22,7 @@
   z-index: 1000;
 }
 
-/* Popup Iframe Container Styles */
+/* Popup Message Container Styles */
 #popup-container {
   display: none;
   position: fixed;
@@ -29,7 +30,8 @@
   left: 20px;
   width: 80%;
   max-width: 400px; /* Set the desired width */
-  height: 60%;
+  height: auto;
+  padding: 20px;
   background-color: white;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -37,20 +39,18 @@
   z-index: 1000;
 }
 
-/* Iframe Styles */
-#popup-iframe {
-  width: 100%;
-  height: calc(100% - 40px); /* Adjust based on the height of your close button */
-  border: none;
-  border-radius: 10px 10px 0 0;
+/* Message Styles */
+#popup-message {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Close Button Styles */
 #close-button {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: 0 auto;
   background-color: #f44336;
   color: white;
   padding: 5px 10px;
@@ -264,9 +264,11 @@
     <!-- Popup Button -->
 <div id="popup-button" onclick="togglePopup()">Popup</div>
 
-<!-- Popup Iframe Container -->
+<!-- Popup Message Container -->
 <div id="popup-container">
-  <iframe id="popup-iframe" src="https://rock-swap.io/#/swap?outputCurrency=0xdce5726e3bc8e1f574416978279bb0ae62ab3c15" title="Popup Iframe"></iframe>
+  <div id="popup-message">
+    <p>This is your popup message!</p>
+  </div>
   <button id="close-button" onclick="togglePopup()">Close</button>
 </div>
     <script>
