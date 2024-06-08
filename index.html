@@ -22,7 +22,7 @@
   z-index: 1000;
 }
 
-/* Popup Message Container Styles */
+/* Popup Iframe Container Styles */
 #popup-container {
   display: none;
   position: fixed;
@@ -30,8 +30,7 @@
   left: 20px;
   width: 80%;
   max-width: 400px; /* Set the desired width */
-  height: auto;
-  padding: 20px;
+  height: 60%;
   background-color: white;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -39,18 +38,20 @@
   z-index: 1000;
 }
 
-/* Message Styles */
-#popup-message {
-  font-size: 16px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
+/* Iframe Styles */
+#popup-iframe {
+  width: 100%;
+  height: calc(100% - 40px); /* Adjust based on the height of your close button */
+  border: none;
+  border-radius: 10px 10px 0 0;
 }
 
 /* Close Button Styles */
 #close-button {
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #f44336;
   color: white;
   padding: 5px 10px;
@@ -264,11 +265,9 @@
     <!-- Popup Button -->
 <div id="popup-button" onclick="togglePopup()">Popup</div>
 
-<!-- Popup Message Container -->
+<!-- Popup Iframe Container -->
 <div id="popup-container">
-  <div id="popup-message">
-    <p>This is your popup message!</p>
-  </div>
+  <iframe id="popup-iframe" src="https://example.com" title="Popup Iframe"></iframe>
   <button id="close-button" onclick="togglePopup()">Close</button>
 </div>
     <script>
